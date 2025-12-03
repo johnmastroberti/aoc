@@ -4,11 +4,11 @@ EXES=$(patsubst src/day%.cpp,bin/aoc25.%,$(SOURCES))
 RUNTARGETS=$(patsubst bin/aoc25.%,run25.%,$(EXES))
 TESTTARGETS=$(patsubst bin/aoc25.%,test25.%,$(EXES))
 
-CXXFLAGS=-std=c++23 -Wall -Wextra -Wpedantic -fsanitize=address -g
+CXXFLAGS=-std=c++23 -Wall -Wextra -Wpedantic -fsanitize=address -O3 -Iinclude
 
 default: $(EXES)
 
-bin/aoc25.%: src/day%.cpp
+bin/aoc25.%: src/day%.cpp Makefile
 	g++ $(CXXFLAGS) -o $@ $<
 
 run: $(RUNTARGETS)
@@ -25,6 +25,6 @@ input/day%.txt:
 	python get_data.py $@
 
 clean:
-	rm -rf bin
+	rm -f bin/*
 
 .PHONY: clean run test

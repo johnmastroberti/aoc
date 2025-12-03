@@ -57,10 +57,6 @@ int main(int, char* argv[]) {
     auto clicks = shifted
         | stdv::adjacent_transform<2>(zeros_between);
 
-    std::print("Pos\tClicks\n");
-    for (auto [p, c] : stdv::zip(shifted, clicks))
-        std::print("{}\t{}\n", p, c);
-
     auto total_clicks = stdr::fold_left(clicks, 0, std::plus<>());
 
 
