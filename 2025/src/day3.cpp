@@ -22,12 +22,6 @@ auto joltage(std::string const& row) {
         ++it;
     }
     return std::stoll(result);
-    // auto first_it = std::max_element(row.begin(), row.end()-1);
-    // auto second_it = std::max_element(first_it + 1, row.end());
-    // assert(first_it != row.end());
-    // assert(second_it != row.end());
-// 
-    // return 10 * (*first_it - '0') + (*second_it - '0');
 }
 
 int main(int, char* argv[]) {
