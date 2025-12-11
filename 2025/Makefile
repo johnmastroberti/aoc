@@ -4,7 +4,7 @@ EXES=$(patsubst src/day%.cpp,bin/aoc25.%,$(SOURCES))
 RUNTARGETS=$(patsubst bin/aoc25.%,run25.%,$(EXES))
 TESTTARGETS=$(patsubst bin/aoc25.%,test25.%,$(EXES))
 
-CXXFLAGS=-std=c++23 -Wall -Wextra -Wpedantic -fsanitize=address -fsanitize=undefined -O3 -Iinclude
+CXXFLAGS=-std=c++23 -Wall -Wextra -Wpedantic -fsanitize=address -fsanitize=undefined -O3 -Iinclude -I/usr/include/lpsolve -llpsolve55
 
 default: $(EXES)
 
