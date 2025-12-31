@@ -3,7 +3,7 @@ EXES=$(patsubst src/day%.hs,bin/aoc15.%,$(SOURCES))
 RUNTARGETS=$(patsubst bin/aoc15.%,run15.%,$(EXES))
 TESTTARGETS=$(patsubst bin/aoc15.%,test15.%,$(EXES))
 
-HFLAGS=-odir obj -hidir obj -i../util 
+HFLAGS=-odir obj -hidir obj -i../util -package ghc
 
 default: $(EXES)
 

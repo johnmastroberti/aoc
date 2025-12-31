@@ -17,3 +17,8 @@ byChars fileName part12 = do
 bindUserArg fun part12 = do
     args <- getArgs
     fun (head args) part12
+
+callBoth :: Show b => (a -> b) -> (a -> b) -> (String -> a) -> String -> (String, String)
+callBoth part1 part2 parseInput inputString = 
+    (show $ part1 input, show $ part2 input) 
+    where input = parseInput inputString
