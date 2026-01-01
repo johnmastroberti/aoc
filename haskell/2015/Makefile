@@ -8,7 +8,7 @@ HFLAGS=-odir obj -hidir obj -i../util -package ghc
 default: $(EXES)
 
 bin/aoc15.%: src/day%.hs ../util/Util.hs obj bin
-	ghc $(HFLAGS) -o $@ $<
+	ghc $(HFLAGS) -hisuf $(patsubst src/day%.hs,%,$<).hi -osuf $(patsubst src/day%.hs,%,$<).o -o $@ $<
 
 run: $(RUNTARGETS)
 
